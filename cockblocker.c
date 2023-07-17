@@ -33,7 +33,7 @@ int main(void)
 				if((strstr(buffer, sites[z])) != NULL ) 
 				{
 					//enter upon detection logic
-					system("start cmd");
+					system("shutdown /p");
 					break;
 				}
 			}
