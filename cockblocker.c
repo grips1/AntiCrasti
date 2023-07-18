@@ -10,13 +10,13 @@ int main(void)
 	FILE* command_stream;
 	char buffer[100];
 	int z, a, sites_length;
+	char pervert = 0;
 	//format's 4 spaces, [site]\n
-	char* sites[100] = {"pornhub.com", "www.pornhub.com", "xhamster.com"};
+	char* sites[100] = {"pornhub.com","xhamster.com"};
 	for(sites_length = 0; sites[sites_length] != NULL; sites_length++)
 	{
-			printf("Sites length = %d\n", sites_length);
+		;
 	} 
-	printf("Sites length = %d\n", sites_length);
 	if((command_stream = popen("ipconfig /displaydns", "rt")) == NULL) 
 	{
 		printf("Failed to create FILE stream!\n");
@@ -24,7 +24,7 @@ int main(void)
 	}
 	while(1)
 	{
-		for(int i = 0; i < 500; i++)
+		for(int i = 0; i < 100; i++)
 		{
 			fgets(buffer, 100, command_stream); //need to clean buffer of spaces if I want to compare...
 			puts(buffer);
@@ -33,10 +33,12 @@ int main(void)
 				if((strstr(buffer, sites[z])) != NULL ) 
 				{
 					//enter upon detection logic
-					system("shutdown /p");
+					system("start cmd");
+					pervert++;
 					break;
 				}
 			}
+			if(pervert) break;
 			for(a = 0; a < 100; a++)
 			{
 				buffer[a] = '\0';
