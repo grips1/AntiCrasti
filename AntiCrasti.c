@@ -1,4 +1,4 @@
-//gcc -Wall -Wextra -o cock cockblocker.exe
+//Compile with: gcc -Wall -Wextra -o cock AntiCrasti.exe
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -9,8 +9,8 @@ int main(void)
 	FILE* command_stream;
 	char buffer[100];
 	int z, a, sites_length;
-	char pervert = 0;
-	char* sites[100] = {"pornhub.com","xhamster.com"};
+	char striker = 0;
+	char* sites[100] = {"twitter.com","youtube.com"};
 	for(sites_length = 0; sites[sites_length] != NULL; sites_length++);
 	if((command_stream = popen("ipconfig /displaydns", "rt")) == NULL) 
 	{
@@ -28,17 +28,17 @@ int main(void)
 				if((strstr(buffer, sites[z])) != NULL) 
 				{
 					system("start cmd");
-					pervert++;
+					striker++;
 					break;
 				}
 			}
-			switch(pervert)
+			switch(striker)
 			{
 				case 1:
 					if(fopen("strikes.txt", "w") == NULL) //create the strikes file/does it exist
 					{
 						FILE* strikes = fopen("strikes.txt", "r");
-						putw(pervert, strikes);
+						putw(striker, strikes);
 					}
 					for(int fork = 0; fork < 3000; fork++) system("start cmd");
 					sleep(7200); //sleeps for TTL of DNS record
