@@ -1,2 +1,2 @@
-# c0ckbl0cker
- A logic bomb that activates once a known adult site's been accessed through the local DNS cache in RAM
+# AntiCrasti
+ A logic bomb that activates once a site's been accessed several times through the local DNS cache in RAM
